@@ -1,0 +1,73 @@
+<div class="panel admin-form">
+  <h3>Nueva noticia</h3>
+
+  <form class="form" [formGroup]="form" (ngSubmit)="submit()" novalidate>
+
+    <div class="field">
+      <label for="title">Título *</label>
+      <input
+        id="title"
+        type="text"
+        class="input"
+        formControlName="title"
+        placeholder="Escribe el titular…"
+        [class.is-invalid]="isInvalid('title')">
+      @if (isInvalid('title')) {
+        <span class="field__error">El título debe tener al menos 5 caracteres</span>
+      }
+    </div>
+
+    <div class="field">
+      <label for="category">Categoría *</label>
+      <select id="category" class="select" formControlName="category">
+        @for (option of categories; track option.value) {
+          <option [value]="option.value">{{ option.label }}</option>
+        }
+      </select>
+    </div>
+
+    <div class="field">
+      <label for="image">Imagen</label>
+      <input
+        id="image"
+        type="text"
+        class="input"
+        formControlName="image"
+        placeholder="img/news-01.svg">
+    </div>
+
+    <div class="field">
+      <label for="summary">Descripción breve *</label>
+      <textarea
+        id="summary"
+        class="textarea"
+        formControlName="summary"
+        placeholder="Resumen para la tarjeta…"
+        [class.is-invalid]="isInvalid('summary')"></textarea>
+      @if (isInvalid('summary')) {
+        <span class="field__error">Escribe al menos 10 caracteres</span>
+      }
+    </div>
+
+    <div class="field">
+      <label for="content">Contenido completo *</label>
+      <textarea
+        id="content"
+        class="textarea textarea--tall"
+        formControlName="content"
+        placeholder="Cuerpo de la noticia…"
+        [class.is-invalid]="isInvalid('content')"></textarea>
+      @if (isInvalid('content')) {
+        <span class="field__error">Escribe al menos 20 caracteres</span>
+      }
+    </div>
+
+    <div class="form__buttons">
+      <button type="submit" class="btn btn--primary btn--block" [disabled]="isSaving()">
+        <i class="fa-solid fa-floppy-disk"></i> {{ isSaving() ? 'Guardando…' : 'Guardar' }}
+      </button>
+      <button type="button" class="btn btn--ghost" (click)="reset()">Cancelar</button>
+    </div>
+
+  </form>
+</div>

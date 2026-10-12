@@ -1,0 +1,31 @@
+<header class="header">
+  <div class="container header__inner">
+    <a routerLink="/" class="logo">TECNOSFERA</a>
+
+    <nav class="nav">
+      <a routerLink="/" routerLinkActive="is-active" [routerLinkActiveOptions]="{ exact: true }">Inicio</a>
+      <a routerLink="/noticias" routerLinkActive="is-active">Noticias</a>
+      <a routerLink="/favoritos" routerLinkActive="is-active">
+        Favoritos<span class="nav-counter" data-testid="favorites-counter">{{
+          favoritesCount() > 0 ? ' (' + favoritesCount() + ')' : ''
+        }}</span>
+      </a>
+      <a routerLink="/contacto" routerLinkActive="is-active">Contacto</a>
+      @if (isAuthenticated()) {
+        <a routerLink="/gestion" routerLinkActive="is-active">Gestión</a>
+      }
+    </nav>
+
+    @if (user(); as currentUser) {
+      <div class="header__user">
+        <span data-testid="current-user">{{ currentUser.email }}</span>
+        <button type="button" class="btn btn--ghost btn--sm" (click)="logout()">
+          <i class="fa-solid fa-right-from-bracket"></i> Cerrar sesión
+        </button>
+      </div>
+    } @else {
+      <a routerLink="/ingresar" routerLinkActive="btn--accent-outline"
+         class="btn btn--outline btn--sm">Ingresar</a>
+    }
+  </div>
+</header>

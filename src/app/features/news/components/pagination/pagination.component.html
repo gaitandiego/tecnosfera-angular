@@ -1,0 +1,20 @@
+<nav class="pagination">
+  <button type="button" class="btn btn--ghost btn--sm" [disabled]="!hasPrevious()" (click)="previous()">
+    <i class="fa-solid fa-chevron-left"></i> Anterior
+  </button>
+
+  @for (page of pages(); track page) {
+    <button
+      type="button"
+      class="btn btn--sm"
+      [class.btn--dark]="page === currentPage()"
+      [class.btn--ghost]="page !== currentPage()"
+      (click)="pageChange.emit(page)">
+      {{ page }}
+    </button>
+  }
+
+  <button type="button" class="btn btn--ghost btn--sm" [disabled]="!hasNext()" (click)="next()">
+    Siguiente <i class="fa-solid fa-chevron-right"></i>
+  </button>
+</nav>

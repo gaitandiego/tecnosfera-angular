@@ -1,0 +1,10 @@
+.image {
+  width: 100%;
+  object-fit: cover;
+  border-radius: var(--radius);
+}
+
+.image--card { height: 160px; border-radius: 0; }
+.image--hero { height: 320px; }
+.image--detail { height: 340px; }
+.image--fav { width: 150px; height: 92px; flex-shrink: 0; border-radius: 6px; }

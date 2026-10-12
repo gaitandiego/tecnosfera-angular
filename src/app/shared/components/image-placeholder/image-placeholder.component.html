@@ -1,0 +1,5 @@
+@if (src(); as source) {
+  <img [src]="source" [alt]="alt()" class="image" [class]="'image--' + variant()">
+} @else {
+  <div class="img-ph" [class]="'img-ph--' + variant()">{{ label() }}</div>
+}

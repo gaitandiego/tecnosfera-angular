@@ -1,0 +1,25 @@
+# Compiled output
+/dist
+/tmp
+/out-tsc
+
+# Dependencies
+/node_modules
+
+# Test coverage
+/coverage
+
+# IDE
+.idea/
+.vscode/*
+!.vscode/extensions.json
+.project
+.classpath
+*.launch
+
+# System
+.DS_Store
+Thumbs.db
+
+# Angular cache
+.angular/

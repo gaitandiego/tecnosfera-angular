@@ -1,0 +1,14 @@
+.search {
+  width: 240px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  font-family: inherit;
+  font-size: 14px;
+  color: var(--ink);
+}
+
+@media (max-width: 1000px) {
+  .search { width: 100%; }
+}

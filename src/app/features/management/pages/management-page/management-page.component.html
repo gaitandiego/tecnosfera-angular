@@ -1,0 +1,86 @@
+<div class="container page-head page-head--row">
+  <div>
+    <h1>Gestión de noticias</h1>
+    <p>Crear y eliminar noticias del portal.</p>
+  </div>
+</div>
+
+<section class="container admin-grid">
+
+  <div class="table-card">
+    @if (isLoading()) {
+      <p class="loading-state">Cargando noticias…</p>
+    } @else {
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Título</th>
+            <th>Categoría</th>
+            <th class="col-action">Acción</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (article of articles(); track article.id) {
+            <tr>
+              <td>{{ article.title }}</td>
+              <td class="col-cat">{{ article.category | categoryLabel }}</td>
+              <td class="col-action">
+                <button
+                  type="button"
+                  class="btn btn--accent-line btn--sm"
+                  (click)="askDelete(article)">
+                  <i class="fa-solid fa-trash"></i> Eliminar
+                </button>
+              </td>
+            </tr>
+          } @empty {
+            <tr>
+              <td colspan="3">No hay noticias publicadas.</td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    }
+
+    @if (pendingDeletion(); as pending) {
+      <div class="alert alert--danger" data-testid="delete-confirmation">
+        <div>
+          <strong>¿Eliminar "{{ pending.title }}"?</strong>
+          <em>Esta acción no se puede deshacer.</em>
+        </div>
+        <div class="alert__actions">
+          <button type="button" class="btn btn--ghost btn--sm" (click)="cancelDelete()">
+            Cancelar
+          </button>
+          <button
+            type="button"
+            class="btn btn--primary btn--sm"
+            [disabled]="isSaving()"
+            (click)="confirmDelete()">
+            <i class="fa-solid fa-trash"></i> Sí, eliminar
+          </button>
+        </div>
+      </div>
+    }
+
+    @if (notice(); as message) {
+      <div class="alert alert--ok notice" data-testid="management-notice" (click)="dismissNotice()">
+        <i class="fa-solid fa-circle-check"></i> {{ message }}
+      </div>
+    }
+
+    @if (error(); as message) {
+      <div class="alert alert--danger" data-testid="management-error">
+        <div><strong>{{ message }}</strong></div>
+        <div class="alert__actions">
+          <button type="button" class="btn btn--ghost btn--sm" (click)="dismissNotice()">
+            Entendido
+          </button>
+        </div>
+      </div>
+    }
+  </div>
+
+  <app-article-form [isSaving]="isSaving()" (save)="create($event)" />
+
+</section>

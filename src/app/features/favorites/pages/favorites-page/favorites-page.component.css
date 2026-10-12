@@ -1,0 +1,20 @@
+.fav-list { display: flex; flex-direction: column; gap: 14px; padding-top: 26px; }
+
+.fav-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+}
+
+.fav-item__body { flex-grow: 1; display: flex; flex-direction: column; gap: 5px; }
+.fav-item__body h3 { font-size: 19px; margin: 0; }
+.fav-item__body p  { font-size: 14px; color: var(--muted); margin: 0; }
+.fav-item__actions { display: flex; gap: 10px; }
+
+@media (max-width: 640px) {
+  .fav-item { flex-direction: column; align-items: stretch; }
+}

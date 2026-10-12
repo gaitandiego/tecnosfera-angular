@@ -1,0 +1,356 @@
+{
+  "categories": [
+    {
+      "value": "technology",
+      "label": "Tecnología"
+    },
+    {
+      "value": "networks",
+      "label": "Redes"
+    },
+    {
+      "value": "security",
+      "label": "Ciberseguridad"
+    },
+    {
+      "value": "ai",
+      "label": "IA"
+    }
+  ],
+  "articles": [
+    {
+      "id": 1,
+      "title": "La fibra óptica que está cambiando la conectividad rural en Colombia",
+      "category": "technology",
+      "date": "2026-09-12",
+      "author": "Redacción Tecnosfera",
+      "readingTime": 7,
+      "image": "img/news-01.svg",
+      "caption": "Tendido de fibra óptica en zona rural de Casanare.",
+      "summary": "Un recorrido por los despliegues FTTH que llevaron internet de alta velocidad a municipios que dependían de enlaces satelitales.",
+      "cover": true,
+      "featured": false,
+      "content": [
+        {
+          "type": "p",
+          "text": "Durante los últimos tres años, los operadores regionales han tendido miles de kilómetros de fibra óptica hacia municipios que históricamente dependieron de enlaces satelitales. El cambio no es solo de velocidad: la latencia pasó de valores cercanos a 600 milisegundos a menos de 20, lo que habilita videollamadas, educación remota y teletrabajo en zonas donde antes resultaba impracticable."
+        },
+        {
+          "type": "h3",
+          "text": "Del satélite a la fibra"
+        },
+        {
+          "type": "p",
+          "text": "Los enlaces satelitales geoestacionarios imponen un retardo físico imposible de reducir, porque la señal debe recorrer casi 36.000 kilómetros de ida y otros tantos de vuelta. La fibra óptica elimina esa barrera y permite además entregar anchos de banda simétricos, algo que las soluciones inalámbricas de largo alcance difícilmente consiguen."
+        },
+        {
+          "type": "p",
+          "text": "El reto actual no es técnico sino logístico: llevar el tendido hasta veredas dispersas exige acuerdos de paso, postería disponible y un modelo de sostenibilidad que permita mantener la red una vez terminada la inversión inicial."
+        },
+        {
+          "type": "h3",
+          "text": "Lo que viene"
+        },
+        {
+          "type": "p",
+          "text": "Los próximos despliegues apuntan a redes GPON con capacidad de evolución a XGS-PON, de manera que la misma planta externa soporte servicios de mayor velocidad sin necesidad de un nuevo tendido."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "IPv6 llega a los hogares colombianos: qué cambia para el usuario",
+      "category": "networks",
+      "date": "2026-09-11",
+      "author": "Equipo de Redes",
+      "readingTime": 6,
+      "image": "img/news-02.svg",
+      "caption": "Asignación de prefijos IPv6 en un equipo de borde.",
+      "summary": "Los operadores regionales inician la asignación de prefijos residenciales y dejan atrás el direccionamiento compartido.",
+      "cover": false,
+      "featured": true,
+      "content": [
+        {
+          "type": "p",
+          "text": "La transición a IPv6 dejó de ser un asunto exclusivo de operadores mayoristas. Varios proveedores regionales ya entregan prefijos a clientes residenciales, lo que permite que cada dispositivo de la casa cuente con direccionamiento propio y alcanzable."
+        },
+        {
+          "type": "h3",
+          "text": "Adiós al direccionamiento compartido"
+        },
+        {
+          "type": "p",
+          "text": "Durante años, la escasez de direcciones IPv4 obligó a compartir una misma dirección pública entre decenas de suscriptores. Ese esquema complica servicios como cámaras de seguridad, consolas de videojuegos o servidores domésticos, y dificulta rastrear el origen de un incidente."
+        },
+        {
+          "type": "p",
+          "text": "Con IPv6 cada hogar recibe un bloque completo, suficiente para segmentar la red en varias subredes: una para el uso familiar, otra para dispositivos del hogar inteligente y otra para invitados."
+        },
+        {
+          "type": "h3",
+          "text": "Qué debe revisar el usuario"
+        },
+        {
+          "type": "p",
+          "text": "Basta con verificar que el router entregado por el operador tenga IPv6 habilitado y que el firewall esté activo. A diferencia de IPv4, en IPv6 no existe traducción de direcciones que oculte los equipos, de modo que el filtrado deja de ser opcional."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Modelos abiertos entrenados en español: el avance de las universidades",
+      "category": "ai",
+      "date": "2026-09-10",
+      "author": "Laura Méndez",
+      "readingTime": 5,
+      "image": "img/news-03.svg",
+      "caption": "Centro de cómputo universitario dedicado a entrenamiento de modelos.",
+      "summary": "Universidades de la región publican sus primeros pesos abiertos entrenados con corpus en español latinoamericano.",
+      "cover": false,
+      "featured": true,
+      "content": [
+        {
+          "type": "p",
+          "text": "Un consorcio de universidades latinoamericanas publicó los primeros modelos de lenguaje entrenados de forma mayoritaria con textos en español de la región, con licencias que permiten su uso y modificación sin restricciones comerciales."
+        },
+        {
+          "type": "h3",
+          "text": "Por qué importa el corpus"
+        },
+        {
+          "type": "p",
+          "text": "La mayoría de los modelos disponibles fueron entrenados con predominio de textos en inglés, lo que introduce sesgos en expresiones locales, nombres propios y referencias culturales. Entrenar con corpus regional mejora el desempeño en tareas cotidianas como atención al ciudadano o clasificación de documentos oficiales."
+        },
+        {
+          "type": "p",
+          "text": "El proyecto liberó también las herramientas de preparación de datos, lo que permite auditar qué fuentes se usaron y reproducir el proceso."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Cinco pasos para blindar tu red doméstica",
+      "category": "security",
+      "date": "2026-09-09",
+      "author": "Equipo de Seguridad",
+      "readingTime": 4,
+      "image": "img/news-04.svg",
+      "caption": "Panel de configuración de un router doméstico.",
+      "summary": "Configuración del router, separación de la red de invitados y actualizaciones: lo mínimo para reducir el riesgo.",
+      "cover": false,
+      "featured": true,
+      "content": [
+        {
+          "type": "p",
+          "text": "La mayoría de los incidentes en redes domésticas no provienen de ataques sofisticados, sino de configuraciones que nunca se cambiaron desde el día de la instalación."
+        },
+        {
+          "type": "h3",
+          "text": "Lo primero: las credenciales"
+        },
+        {
+          "type": "p",
+          "text": "Cambiar la contraseña de administración del router y la clave de la red inalámbrica sigue siendo la medida con mayor impacto. Las credenciales de fábrica suelen estar publicadas en manuales accesibles en línea."
+        },
+        {
+          "type": "h3",
+          "text": "Separar y actualizar"
+        },
+        {
+          "type": "p",
+          "text": "Crear una red de invitados evita que un dispositivo ajeno acceda a los equipos de la casa. Mantener el firmware actualizado cierra vulnerabilidades ya conocidas, y desactivar la administración remota reduce la superficie expuesta a internet."
+        },
+        {
+          "type": "p",
+          "text": "Por último, revisar periódicamente la lista de dispositivos conectados permite detectar equipos que no deberían estar en la red."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Wi-Fi 7 en Colombia: qué equipos lo soportan realmente",
+      "category": "networks",
+      "date": "2026-09-08",
+      "author": "Equipo de Redes",
+      "readingTime": 6,
+      "image": "img/news-05.svg",
+      "caption": "Router inalámbrico de nueva generación en banco de pruebas.",
+      "summary": "Comparativa de routers disponibles en el mercado local y los requisitos reales de instalación.",
+      "cover": false,
+      "featured": false,
+      "content": [
+        {
+          "type": "p",
+          "text": "La etiqueta Wi-Fi 7 empieza a aparecer en equipos comercializados en el país, pero no todos aprovechan las funciones que definen el estándar."
+        },
+        {
+          "type": "h3",
+          "text": "Las funciones que marcan la diferencia"
+        },
+        {
+          "type": "p",
+          "text": "Los canales de 320 MHz y la operación simultánea en varias bandas son las características que producen mejoras medibles. Un equipo que anuncia Wi-Fi 7 sin soporte de la banda de 6 GHz ofrece un salto mucho más modesto del esperado."
+        },
+        {
+          "type": "p",
+          "text": "Antes de invertir conviene revisar también el enlace de internet contratado: de poco sirve una red inalámbrica de varios gigabits si la acometida entrega una fracción de esa capacidad."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Centros de datos regionales: la nueva ola de inversión",
+      "category": "technology",
+      "date": "2026-09-06",
+      "author": "Redacción Tecnosfera",
+      "readingTime": 5,
+      "image": "img/news-06.svg",
+      "caption": "Pasillo frío en un centro de datos regional.",
+      "summary": "Tres proyectos que buscan reducir la latencia manteniendo el tráfico dentro del país.",
+      "cover": false,
+      "featured": false,
+      "content": [
+        {
+          "type": "p",
+          "text": "Tres proyectos anunciados este año apuntan a instalar capacidad de cómputo fuera de las principales capitales, con el objetivo de acercar los servicios a los usuarios finales."
+        },
+        {
+          "type": "h3",
+          "text": "Latencia y soberanía de los datos"
+        },
+        {
+          "type": "p",
+          "text": "Mantener el tráfico dentro del territorio nacional reduce el retardo y simplifica el cumplimiento normativo sobre tratamiento de datos personales. Para las entidades públicas, ese segundo factor suele pesar tanto como el rendimiento."
+        },
+        {
+          "type": "p",
+          "text": "El principal desafío es energético: la disponibilidad de suministro estable y de respaldo determina dónde resulta viable construir."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "title": "Redes eléctricas inteligentes: sensores que anticipan la falla",
+      "category": "technology",
+      "date": "2026-09-04",
+      "author": "Carlos Peña",
+      "readingTime": 5,
+      "image": "img/news-07.svg",
+      "caption": "Sensor de monitoreo instalado sobre una línea de distribución.",
+      "summary": "La instrumentación de las líneas de distribución permite detectar fallas antes de que produzcan cortes prolongados.",
+      "cover": false,
+      "featured": false,
+      "content": [
+        {
+          "type": "p",
+          "text": "La instalación de sensores en líneas de distribución permite identificar anomalías térmicas y variaciones de carga antes de que se conviertan en interrupciones del servicio."
+        },
+        {
+          "type": "h3",
+          "text": "Del mantenimiento correctivo al predictivo"
+        },
+        {
+          "type": "p",
+          "text": "El modelo tradicional atiende la falla una vez ocurrida. Con telemetría continua es posible programar la intervención en la ventana de menor impacto, lo que reduce tanto el tiempo de indisponibilidad como el costo de la reparación."
+        },
+        {
+          "type": "p",
+          "text": "La transmisión de estos datos exige redes de comunicación confiables, razón por la cual muchos operadores están desplegando enlaces dedicados en paralelo a la infraestructura eléctrica."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Autenticación en dos pasos: por qué las claves ya no bastan",
+      "category": "security",
+      "date": "2026-09-02",
+      "author": "Equipo de Seguridad",
+      "readingTime": 4,
+      "image": "img/news-08.svg",
+      "caption": "Aplicación de códigos temporales en un teléfono móvil.",
+      "summary": "Las filtraciones masivas de credenciales hacen de la verificación adicional una medida indispensable.",
+      "cover": false,
+      "featured": false,
+      "content": [
+        {
+          "type": "p",
+          "text": "Cada filtración de credenciales alimenta listas que se reutilizan de forma automatizada contra otros servicios, aprovechando que muchas personas repiten la misma contraseña."
+        },
+        {
+          "type": "h3",
+          "text": "No todos los segundos factores son iguales"
+        },
+        {
+          "type": "p",
+          "text": "Los códigos enviados por mensaje de texto son mejores que nada, pero resultan vulnerables al secuestro de la línea telefónica. Las aplicaciones de códigos temporales y las llaves físicas ofrecen una protección considerablemente mayor."
+        },
+        {
+          "type": "p",
+          "text": "Para cuentas administrativas, habilitar el segundo factor debería considerarse un requisito y no una opción."
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "title": "Asistentes de código en el aula: cómo los usan los estudiantes",
+      "category": "ai",
+      "date": "2026-08-30",
+      "author": "Laura Méndez",
+      "readingTime": 5,
+      "image": "img/news-09.svg",
+      "caption": "Estudiantes durante una sesión de programación asistida.",
+      "summary": "Un estudio local revisa el efecto de los asistentes de programación en el aprendizaje de estudiantes de ingeniería.",
+      "cover": false,
+      "featured": false,
+      "content": [
+        {
+          "type": "p",
+          "text": "Un estudio realizado en facultades de ingeniería observó cómo los estudiantes incorporan asistentes de programación durante los primeros semestres."
+        },
+        {
+          "type": "h3",
+          "text": "Resultados mixtos"
+        },
+        {
+          "type": "p",
+          "text": "La velocidad para completar ejercicios aumentó de forma notable, pero el desempeño en evaluaciones sin asistencia mostró diferencias cuando los estudiantes no revisaban el código sugerido antes de usarlo."
+        },
+        {
+          "type": "p",
+          "text": "Los docentes consultados coinciden en que la herramienta resulta útil cuando se emplea para explicar y revisar, más que para producir soluciones completas."
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "title": "Interoperabilidad de sistemas públicos: el reto de hablar el mismo idioma",
+      "category": "technology",
+      "date": "2026-08-28",
+      "author": "Redacción Tecnosfera",
+      "readingTime": 6,
+      "image": "img/news-10.svg",
+      "caption": "Tablero de integración entre sistemas de información.",
+      "summary": "Las entidades avanzan hacia estándares comunes que permitan intercambiar información sin duplicar trámites.",
+      "cover": false,
+      "featured": false,
+      "content": [
+        {
+          "type": "p",
+          "text": "La falta de estándares comunes obliga a los ciudadanos a presentar una y otra vez los mismos documentos ante distintas entidades."
+        },
+        {
+          "type": "h3",
+          "text": "Estándares antes que plataformas"
+        },
+        {
+          "type": "p",
+          "text": "La experiencia de otros países sugiere que el obstáculo no es la ausencia de tecnología, sino la falta de acuerdos sobre formatos, identificadores y responsabilidades en el intercambio de información."
+        },
+        {
+          "type": "p",
+          "text": "Los proyectos en curso apuntan a definir servicios de consulta con reglas claras de autorización, de modo que cada entidad acceda únicamente al dato que necesita."
+        }
+      ]
+    }
+  ]
+}

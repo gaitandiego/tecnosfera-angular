@@ -1,0 +1,11 @@
+<div class="chips">
+  @for (option of options; track option.value) {
+    <button
+      type="button"
+      class="chip"
+      [class.is-active]="option.value === selected()"
+      (click)="categoryChange.emit(option.value)">
+      {{ option.label }}
+    </button>
+  }
+</div>

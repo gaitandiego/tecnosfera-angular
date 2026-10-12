@@ -1,0 +1,7 @@
+.contact {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 24px 40px 24px;
+}
+
+.contact__panel { margin-top: 26px; }

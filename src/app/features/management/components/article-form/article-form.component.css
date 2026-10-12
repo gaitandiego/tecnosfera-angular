@@ -1,0 +1,9 @@
+.admin-form h3 { font-size: 19px; margin: 0 0 16px 0; }
+.admin-form .form { gap: 16px; }
+.admin-form .input,
+.admin-form .select,
+.admin-form .textarea { padding: 11px 13px; }
+.admin-form .textarea { min-height: 70px; }
+.admin-form .textarea--tall { min-height: 100px; }
+.admin-form .form__buttons { display: flex; gap: 10px; }
+.admin-form .form__buttons .btn { align-self: auto; }

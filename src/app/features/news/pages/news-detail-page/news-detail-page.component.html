@@ -1,0 +1,60 @@
+<article class="container article">
+  <a routerLink="/noticias" class="article__back"><i class="fa-solid fa-arrow-left"></i> Volver a noticias</a>
+
+  @if (status() === 'loading') {
+    <p class="loading-state">Cargando noticia…</p>
+  } @else if (error(); as message) {
+    <div class="empty-state">
+      <h3>Noticia no encontrada</h3>
+      <p>{{ message }}</p>
+      <a routerLink="/noticias" class="btn btn--primary">Ver todas las noticias</a>
+    </div>
+  } @else if (article(); as current) {
+    <span class="article__meta">
+      {{ current.category | categoryLabel | uppercase }} · {{ current.date | articleDate }}
+    </span>
+
+    <h1 class="article__title">{{ current.title }}</h1>
+    <p class="article__by">Por {{ current.author }} · {{ current.readingTime }} min de lectura</p>
+
+    <figure class="article__figure">
+      <app-image-placeholder
+        [src]="current.image"
+        [alt]="current.title"
+        variant="detail"
+        label="IMAGEN REPRESENTATIVA" />
+    </figure>
+
+    @if (current.caption) {
+      <p class="article__caption">{{ current.caption }}</p>
+    }
+
+    <p class="article__lead">{{ current.summary }}</p>
+
+    <div class="article__body">
+      @for (block of current.content; track $index) {
+        @if (block.type === 'h3') {
+          <h3>{{ block.text }}</h3>
+        } @else {
+          <p>{{ block.text }}</p>
+        }
+      }
+    </div>
+
+    <div class="article__actions">
+      <button
+        type="button"
+        class="btn"
+        [class.btn--primary]="!isFavorite()"
+        [class.btn--dark]="isFavorite()"
+        (click)="toggleFavorite()"
+        data-testid="favorite-toggle">
+        <i class="fa-solid fa-heart"></i>
+        {{ isFavorite() ? 'Quitar de favoritos' : 'Agregar a favoritos' }}
+      </button>
+      <button type="button" class="btn btn--ghost" (click)="share()" data-testid="share-button">
+        <i class="fa-solid fa-share-nodes"></i> Compartir
+      </button>
+    </div>
+  }
+</article>

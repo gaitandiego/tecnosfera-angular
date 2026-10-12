@@ -1,0 +1,52 @@
+<div class="container page-head page-head--row">
+  <div>
+    <h1>Mis favoritos</h1>
+    <p data-testid="favorites-count">
+      {{ count() }} {{ count() === 1 ? 'noticia guardada' : 'noticias guardadas' }}
+    </p>
+  </div>
+  @if (!isEmpty()) {
+    <button type="button" class="btn btn--ghost" (click)="clear()">
+      <i class="fa-solid fa-trash"></i> Vaciar lista
+    </button>
+  }
+</div>
+
+<section class="container">
+  @if (isEmpty()) {
+    <div class="empty-state">
+      <h3>Aún no has guardado noticias</h3>
+      <p>Pulsa "Agregar a favoritos" en cualquier noticia para añadirla aquí.</p>
+      <a routerLink="/noticias" class="btn btn--primary">Explorar noticias</a>
+    </div>
+  } @else {
+    <div class="fav-list">
+      @for (item of items(); track item.article.id) {
+        <article class="fav-item">
+          <app-image-placeholder
+            [src]="item.article.image"
+            [alt]="item.article.title"
+            variant="fav" />
+
+          <div class="fav-item__body">
+            <span class="card__cat">{{ item.article.category | categoryLabel | uppercase }}</span>
+            <h3>{{ item.article.title }}</h3>
+            <p>{{ item.article.date | articleDate }}</p>
+          </div>
+
+          <div class="fav-item__actions">
+            <a [routerLink]="['/noticias', item.article.id]" class="btn btn--dark btn--sm">
+              Ver noticia
+            </a>
+            <button
+              type="button"
+              class="btn btn--accent-line btn--sm"
+              (click)="remove(item.article.id)">
+              <i class="fa-solid fa-xmark"></i> Quitar
+            </button>
+          </div>
+        </article>
+      }
+    </div>
+  }
+</section>

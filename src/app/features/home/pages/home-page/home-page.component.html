@@ -1,0 +1,54 @@
+@if (isLoading()) {
+  <p class="loading-state">Cargando portada…</p>
+} @else if (error(); as message) {
+  <div class="container">
+    <div class="empty-state">
+      <h3>Algo salió mal</h3>
+      <p>{{ message }}</p>
+    </div>
+  </div>
+} @else {
+  @if (cover(); as article) {
+    <section class="container hero">
+      <div class="hero__text">
+        <span class="hero__meta">
+          PORTADA · {{ article.date | articleDate }}
+        </span>
+        <h1 class="hero__title">{{ article.title }}</h1>
+        <p class="hero__lead">{{ article.summary }}</p>
+        <a [routerLink]="['/noticias', article.id]" class="btn btn--primary">Leer noticia</a>
+      </div>
+
+      <a class="hero__media" [routerLink]="['/noticias', article.id]">
+        <app-image-placeholder
+          [src]="article.image"
+          [alt]="article.title"
+          variant="hero"
+          label="IMAGEN DESTACADA" />
+      </a>
+    </section>
+  }
+
+  <section class="container">
+    <div class="section-head">
+      <h2>Noticias destacadas</h2>
+      <a routerLink="/noticias">Ver todas</a>
+    </div>
+
+    <div class="grid-3">
+      @for (article of highlights(); track article.id) {
+        <app-article-card [article]="article" />
+      }
+    </div>
+  </section>
+
+  <section class="container">
+    <div class="cta">
+      <div>
+        <h3>¿Tienes una noticia para publicar?</h3>
+        <p>Escríbenos y la revisamos para la próxima edición.</p>
+      </div>
+      <a routerLink="/contacto" class="btn btn--primary">Contactar</a>
+    </div>
+  </section>
+}

@@ -1,0 +1,95 @@
+<div class="contact">
+  <div class="page-head">
+    <h1>Escríbenos</h1>
+    <p>Envía tu propuesta de noticia, una corrección o una consulta.</p>
+  </div>
+
+  <div class="panel contact__panel">
+    <form class="form" [formGroup]="form" (ngSubmit)="submit()" novalidate>
+
+      <div class="field">
+        <label for="fullName">Nombre completo *</label>
+        <input
+          id="fullName"
+          type="text"
+          class="input"
+          formControlName="fullName"
+          placeholder="Nombre y apellido"
+          [class.is-invalid]="isInvalid('fullName')">
+        @if (isInvalid('fullName')) {
+          <span class="field__error">Escribe tu nombre completo</span>
+        }
+      </div>
+
+      <div class="field">
+        <label for="email">Correo electrónico *</label>
+        <input
+          id="email"
+          type="email"
+          class="input"
+          formControlName="email"
+          placeholder="tu@correo.com"
+          [class.is-invalid]="isInvalid('email')">
+        @if (isInvalid('email')) {
+          <span class="field__error">Ingresa un correo electrónico válido</span>
+        }
+      </div>
+
+      <div class="field">
+        <label for="subject">Asunto *</label>
+        <select
+          id="subject"
+          class="select"
+          formControlName="subject"
+          [class.is-invalid]="isInvalid('subject')">
+          <option value="">Selecciona una opción</option>
+          @for (option of subjects; track option.value) {
+            <option [value]="option.value">{{ option.label }}</option>
+          }
+        </select>
+        @if (isInvalid('subject')) {
+          <span class="field__error">Selecciona el asunto de tu mensaje</span>
+        }
+      </div>
+
+      <div class="field">
+        <label for="body">Mensaje *</label>
+        <textarea
+          id="body"
+          class="textarea"
+          formControlName="body"
+          placeholder="Cuéntanos en pocas líneas de qué se trata…"
+          [class.is-invalid]="isInvalid('body')"></textarea>
+        @if (isInvalid('body')) {
+          <span class="field__error">El mensaje debe tener al menos 15 caracteres</span>
+        }
+      </div>
+
+      <label class="check">
+        <input type="checkbox" formControlName="acceptsDataPolicy">
+        Acepto el tratamiento de mis datos personales *
+      </label>
+      @if (isInvalid('acceptsDataPolicy')) {
+        <span class="field__error">Debes aceptar el tratamiento de datos personales</span>
+      }
+
+      <button type="submit" class="btn btn--primary" [disabled]="isSending()">
+        <i class="fa-solid fa-paper-plane"></i> {{ isSending() ? 'Enviando…' : 'Enviar mensaje' }}
+      </button>
+
+      @if (wasSent()) {
+        <div class="alert alert--ok" data-testid="contact-success">
+          <i class="fa-solid fa-circle-check"></i> Mensaje enviado correctamente
+          <span>Te responderemos en un plazo de dos días hábiles.</span>
+        </div>
+      }
+
+      @if (error(); as message) {
+        <div class="alert alert--danger" data-testid="contact-error">
+          <div><strong>{{ message }}</strong></div>
+        </div>
+      }
+
+    </form>
+  </div>
+</div>

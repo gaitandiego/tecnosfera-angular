@@ -1,0 +1,43 @@
+<div class="container page-head">
+  <h1>Todas las noticias</h1>
+  <p data-testid="results-count">
+    {{ total() }} {{ total() === 1 ? 'resultado' : 'resultados' }}
+  </p>
+</div>
+
+<div class="container toolbar">
+  <app-category-chips [selected]="category()" (categoryChange)="onCategoryChange($event)" />
+  <app-search-box [term]="search()" (termChange)="onSearchChange($event)" />
+</div>
+
+<section class="container">
+  @if (isLoading()) {
+    <p class="loading-state">Cargando noticias…</p>
+  } @else if (error(); as message) {
+    <div class="empty-state">
+      <h3>Algo salió mal</h3>
+      <p>{{ message }}</p>
+    </div>
+  } @else if (noResults()) {
+    <div class="empty-state">
+      <h3>No encontramos noticias</h3>
+      <p>Prueba con otra categoría o cambia los términos de búsqueda.</p>
+      <button type="button" class="btn btn--primary" (click)="clearFilters()">
+        Limpiar filtros
+      </button>
+    </div>
+  } @else {
+    <div class="grid-3">
+      @for (article of articles(); track article.id) {
+        <app-article-card [article]="article" />
+      }
+    </div>
+
+    <app-pagination
+      [currentPage]="page()"
+      [pages]="pages()"
+      [hasPrevious]="hasPrevious()"
+      [hasNext]="hasNext()"
+      (pageChange)="onPageChange($event)" />
+  }
+</section>
